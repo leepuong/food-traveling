@@ -30,6 +30,12 @@
                         <input type="text" name="username" placeholder="Your Username">
                     </td>
                 </tr>
+                <tr>
+                    <td>email: </td>
+                    <td>
+                        <input type="text" name="username" placeholder="Your Username">
+                    </td>
+                </tr>
 
                 <tr>
                     <td>Password: </td>
