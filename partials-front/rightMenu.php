@@ -19,20 +19,19 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="images/icon-setting.svg" alt="Setting" />
+                    <img src="<?php echo SITEURL; ?>images/icon/settingUnHover.svg" alt="setting" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-food.svg" alt="Food" />
+                    <img src="<?php echo SITEURL; ?>images/icon/logoBrandUnHover.svg" alt="brand" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-arrow.svg" alt="Forward" />
+                    <img src="<?php echo SITEURL; ?>images/icon/logoutUnHover.svg" alt="logout" />
                 </a>
             </li>
         </ul>
-        <div class="right-menu-divider"></div>
     </div>
     <!-- Navbar Section Ends Here -->

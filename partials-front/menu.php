@@ -15,64 +15,35 @@
 </head>
 
 <body>
-    <!-- Navbar Section Starts Here -->
-    <!-- <section class="navbar">
 
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-left">
-                <ul>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section> -->
     <div class="left-menu">
         <ul>
             <li>
                 <a href="#">
-                    <img src="images/icon-home.svg" alt="Home" />
+                    <img src="<?php echo SITEURL; ?>images/icon/homeUnHover.svg" alt="Home" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-like.svg" alt="Like" />
+                    <img src="<?php echo SITEURL; ?>images/icon/likeUnHover.svg" alt="like" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-history.svg" alt="History" />
+                    <img src="<?php echo SITEURL; ?>images/icon/hisUnHover.svg" alt="history" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-order.svg" alt="Your Order" />
+                    <img src="<?php echo SITEURL; ?>images/icon/orderUnHover.svg" alt="order" />
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="images/icon-track.svg" alt="Theo giõi đơn hàng" />
+                    <img src="<?php echo SITEURL; ?>images/icon/shippingUnHover.svg" alt="shipping" />
                 </a>
             </li>
         </ul>
-        <div class="left-menu-divider"></div>
+        <!-- <div class="left-menu-divider"></div> -->
     </div>
     <!-- Navbar Section Ends Here -->
