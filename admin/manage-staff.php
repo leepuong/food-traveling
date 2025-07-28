@@ -52,6 +52,7 @@
                 <th>S.N.</th>
                 <th>Username</th>
                 <th>Email</th>
+                <th>Phonenumber</th>
                 <th>Actions</th>
             </tr>
 
@@ -80,6 +81,7 @@
                         $id = $rows['id'];
                         $username = $rows['username'];
                         $email = $rows['email'];
+                        $phonenumber = $rows['phonenumber'];
                         $role = $rows['role'];
 
                         //Display the Values in our Table
@@ -89,6 +91,7 @@
                             <td><?php echo $sn++; ?>. </td>
                             <td><?php echo $username; ?></td>
                             <td><?php echo $email; ?></td>
+                            <td><?php echo $phonenumber; ?></td>
                             <td>
                                 <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>&role=<?php echo $role ?>" class="btn-primary">Change Password</a>
                                 <a href="<?php echo SITEURL; ?>admin/update-staff.php?id=<?php echo $id; ?>" class="btn-secondary">Update Staff</a>

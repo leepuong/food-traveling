@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($conn, $raw_password);
 
     //2. SQL to check whether the user with username and password exists or not
-    $sql = "SELECT * FROM tbl_user_especial WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM tbl_user_especial WHERE username='$username' AND password='$password' AND role='admin'";
 
     //3. Execute the Query
     $res = mysqli_query($conn, $sql);

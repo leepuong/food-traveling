@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1>Add Shiper</h1>
 
         <br><br>
 
@@ -46,7 +46,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Shiper" class="btn-secondary">
                     </td>
                 </tr>
 
@@ -57,7 +57,6 @@
 
     </div>
 </div>
-
 
 
 <?php
@@ -72,16 +71,16 @@ if (isset($_POST['submit'])) {
     //1. Get the Data from form
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $phonenumber = $_POST['phoneNumber'];
+    $phonenumber = $_POST['phonenumber'];
     $password = md5($_POST['password']); //Password Encryption with MD5
 
     //2. SQL Query to Save the data into database
     $sql = "INSERT INTO tbl_user_especial SET 
             username='$username',
+            phonenumber='$phonenumber',
             email='$email',
             password='$password',
-            phonenumber='$phonenumber',
-            role='admin'
+            role='shipper'
         ";
 
     //3. Executing Query and Saving Data into Datbase
@@ -92,16 +91,16 @@ if (isset($_POST['submit'])) {
         //Data Inserted
         //echo "Data Inserted";
         //Create a Session Variable to Display Message
-        $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
+        $_SESSION['add'] = "<div class='success'>Staff Added Successfully.</div>";
         //Redirect Page to Manage Admin
-        header("location:" . SITEURL . 'admin/manage-admin.php');
+        header("location:" . SITEURL . 'admin/manage-shipper.php');
     } else {
         //FAiled to Insert DAta
         //echo "Faile to Insert Data";
         //Create a Session Variable to Display Message
-        $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
+        $_SESSION['add'] = "<div class='error'>Failed to Add Staff.</div>";
         //Redirect Page to Add Admin
-        header("location:" . SITEURL . 'admin/add-admin.php');
+        header("location:" . SITEURL . 'admin/add-shipper.php');
     }
 }
 

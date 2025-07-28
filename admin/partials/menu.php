@@ -21,8 +21,8 @@ include('login-check.php');
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="manage-admin.php">Admin</a></li>
-                <li><a href="manage-staff.php">Staff</a></li>
-                <li><a href="">Shipper</a></li>
+                <!-- <li><a href="manage-staff.php">Staff</a></li> -->
+                <li><a href="manage-shipper.php">Shipper</a></li>
                 <li><a href="manage-category.php">Category</a></li>
                 <li><a href="manage-food.php">Food</a></li>
                 <li><a href="manage-order.php">Order</a></li>

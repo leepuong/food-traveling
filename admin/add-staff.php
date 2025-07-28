@@ -18,16 +18,22 @@
 
             <table class="tbl-30">
                 <tr>
-                    <td>Username: </td>
+                    <td>Email: </td>
                     <td>
-                        <input type="text" name="username" placeholder="Your Username">
+                        <input type="text" name="email" placeholder="Your Email">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Email: </td>
+                    <td>Phonenumber: </td>
                     <td>
-                        <input type="text" name="email" placeholder="Your email">
+                        <input type="text" name="phonenumber" placeholder="Your Phone Number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Username: </td>
+                    <td>
+                        <input type="text" name="username" placeholder="Your Username">
                     </td>
                 </tr>
 
@@ -65,6 +71,7 @@ if (isset($_POST['submit'])) {
     //1. Get the Data from form
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $phonenumber = $_POST['phonenumber'];
     $password = md5($_POST['password']); //Password Encryption with MD5
 
     //2. SQL Query to Save the data into database
@@ -72,11 +79,12 @@ if (isset($_POST['submit'])) {
             username='$username',
             email='$email',
             password='$password',
+            phonenumber='$phonenumber',
             role='staff'
         ";
 
     //3. Executing Query and Saving Data into Datbase
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
     if ($res == TRUE) {

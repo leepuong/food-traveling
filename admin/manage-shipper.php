@@ -4,7 +4,7 @@
 <!-- Main Content Section Starts -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Admin</h1>
+        <h1>Manage Shipper</h1>
 
         <br />
 
@@ -42,8 +42,11 @@
         ?>
         <br><br><br>
 
+
+
+
         <!-- Button to Add Admin -->
-        <a href="add-admin.php" class="btn-primary">Add Admin</a>
+        <a href="add-shipper.php" class="btn-primary">Add Shiper</a>
 
         <br /><br /><br />
 
@@ -59,7 +62,7 @@
 
             <?php
             //Query to Get all Admin
-            $sql = "SELECT * FROM `tbl_user_especial` WHERE `role` = 'admin';";
+            $sql = "SELECT * FROM `tbl_user_especial` WHERE role = 'shipper';";
             //Execute the Query
             $res = mysqli_query($conn, $sql);
 
@@ -94,8 +97,8 @@
                             <td><?php echo $phonenumber; ?></td>
                             <td>
                                 <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>&role=<?php echo $role ?>" class="btn-primary">Change Password</a>
-                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-shipper.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-shipper.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                             </td>
                         </tr>
 
