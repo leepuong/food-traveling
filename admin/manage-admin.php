@@ -58,7 +58,7 @@
 
             <?php
             //Query to Get all Admin
-            $sql = "SELECT * FROM tbl_user_especial";
+            $sql = "SELECT * FROM `tbl_user_especial` WHERE `role` = 'admin';";
             //Execute the Query
             $res = mysqli_query($conn, $sql);
 
@@ -80,6 +80,7 @@
                         $id = $rows['id'];
                         $username = $rows['username'];
                         $email = $rows['email'];
+                        $role = $rows['role'];
 
                         //Display the Values in our Table
             ?>
@@ -89,7 +90,7 @@
                             <td><?php echo $username; ?></td>
                             <td><?php echo $email; ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>&role=<?php echo $role ?>" class="btn-primary">Change Password</a>
                                 <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                                 <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                             </td>
@@ -111,6 +112,3 @@
 
     </div>
 </div>
-<!-- Main Content Setion Ends -->
-
-<?php include('partials/footer.php'); ?>

@@ -18,16 +18,16 @@
 
             <table class="tbl-30">
                 <tr>
-                    <td>Full Name: </td>
+                    <td>Username: </td>
                     <td>
-                        <input type="text" name="full_name" placeholder="Enter Your Name">
+                        <input type="text" name="username" placeholder="Your Username">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Username: </td>
+                    <td>Email: </td>
                     <td>
-                        <input type="text" name="username" placeholder="Your Username">
+                        <input type="text" name="email" placeholder="Your email">
                     </td>
                 </tr>
 
@@ -52,7 +52,6 @@
     </div>
 </div>
 
-<?php include('partials/footer.php'); ?>
 
 
 <?php
@@ -65,15 +64,16 @@ if (isset($_POST['submit'])) {
     //echo "Button Clicked";
 
     //1. Get the Data from form
-    $full_name = $_POST['full_name'];
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = md5($_POST['password']); //Password Encryption with MD5
 
     //2. SQL Query to Save the data into database
-    $sql = "INSERT INTO tbl_admin SET 
-            full_name='$full_name',
+    $sql = "INSERT INTO tbl_user_especial SET 
             username='$username',
-            password='$password'    
+            email='$email',
+            password='$password',
+            role='Admin'
         ";
 
     //3. Executing Query and Saving Data into Datbase
