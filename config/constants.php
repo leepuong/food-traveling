@@ -1,11 +1,13 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-define('SITEURL', 'http://localhost/FINAL-PROJECT/food-order-website-php/');
-define('LOCALHOST', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'food-order');
+if (!defined('SITEURL')) define('SITEURL', 'http://localhost/FINAL-PROJECT/food-order-website-php/');
+if (!defined('LOCALHOST')) define('LOCALHOST', 'localhost');
+if (!defined('DB_USERNAME')) define('DB_USERNAME', 'root');
+if (!defined('DB_PASSWORD')) define('DB_PASSWORD', '');
+if (!defined('DB_NAME')) define('DB_NAME', 'food-order');
 
 $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD);
 if (!$conn) {
