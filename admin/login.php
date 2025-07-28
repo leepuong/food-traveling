@@ -56,8 +56,8 @@ if (isset($_POST['submit'])) {
     // $password = md5($_POST['password']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
 
-    // $raw_password = md5($_POST['password']);
-    $raw_password = $_POST['password'];
+    $raw_password = md5($_POST['password']);
+    // $raw_password = $_POST['password'];
 
     $password = mysqli_real_escape_string($conn, $raw_password);
 

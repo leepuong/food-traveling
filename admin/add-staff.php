@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1>Add Staff</h1>
 
         <br><br>
 
@@ -30,12 +30,6 @@
                         <input type="text" name="email" placeholder="Your email">
                     </td>
                 </tr>
-                <tr>
-                    <td>email: </td>
-                    <td>
-                        <input type="text" name="username" placeholder="Your Username">
-                    </td>
-                </tr>
 
                 <tr>
                     <td>Password: </td>
@@ -46,7 +40,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Staff" class="btn-secondary">
                     </td>
                 </tr>
 
@@ -57,7 +51,6 @@
 
     </div>
 </div>
-
 
 
 <?php
@@ -79,7 +72,7 @@ if (isset($_POST['submit'])) {
             username='$username',
             email='$email',
             password='$password',
-            role='Admin'
+            role='staff'
         ";
 
     //3. Executing Query and Saving Data into Datbase
@@ -90,16 +83,16 @@ if (isset($_POST['submit'])) {
         //Data Inserted
         //echo "Data Inserted";
         //Create a Session Variable to Display Message
-        $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
+        $_SESSION['add'] = "<div class='success'>Staff Added Successfully.</div>";
         //Redirect Page to Manage Admin
-        header("location:" . SITEURL . 'admin/manage-admin.php');
+        header("location:" . SITEURL . 'admin/manage-staff.php');
     } else {
         //FAiled to Insert DAta
         //echo "Faile to Insert Data";
         //Create a Session Variable to Display Message
-        $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
+        $_SESSION['add'] = "<div class='error'>Failed to Add Staff.</div>";
         //Redirect Page to Add Admin
-        header("location:" . SITEURL . 'admin/add-admin.php');
+        header("location:" . SITEURL . 'admin/add-staff.php');
     }
 }
 

@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Update Admin</h1>
+        <h1>Update Staff</h1>
 
         <br><br>
 
@@ -11,7 +11,7 @@
         $id = $_GET['id'];
 
         //2. Create SQL Query to Get the Details
-        $sql = "SELECT * FROM tbl_user_especial WHERE id=$id";
+        $sql = "SELECT * FROM tbl_user_especial WHERE id=$id AND `role` = 'staff'";
 
         //Execute the Query
         $res = mysqli_query($conn, $sql);
@@ -30,7 +30,7 @@
                 $username = $row['username'];
             } else {
                 //Redirect to Manage Admin PAge
-                header('location:' . SITEURL . 'admin/manage-admin.php');
+                header('location:' . SITEURL . 'admin/manage-staff.php');
             }
         }
 
@@ -90,14 +90,14 @@ if (isset($_POST['submit'])) {
     //Check whether the query executed successfully or not
     if ($res == true) {
         //Query Executed and Admin Updated
-        $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
+        $_SESSION['update'] = "<div class='success'>Staff Updated Successfully.</div>";
         //Redirect to Manage Admin Page
-        header('location:' . SITEURL . 'admin/manage-admin.php');
+        header('location:' . SITEURL . 'admin/manage-staff.php');
     } else {
         //Failed to Update Admin
-        $_SESSION['update'] = "<div class='error'>Failed to Delete Admin.</div>";
+        $_SESSION['update'] = "<div class='error'>Failed to Delete Staff.</div>";
         //Redirect to Manage Admin Page
-        header('location:' . SITEURL . 'admin/manage-admin.php');
+        header('location:' . SITEURL . 'admin/manage-staff.php');
     }
 }
 
