@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo SITEURL; ?>login.php">
                     <img src="<?php echo SITEURL; ?>images/icon/logoutUnHover.svg" alt="logout" />
                 </a>
             </li>

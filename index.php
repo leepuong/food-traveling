@@ -1,9 +1,9 @@
 <?php include('partials-front/menu.php'); ?>
 
 <?php include('partials-front/rightMenu.php'); ?>
-
+<?php include('partials-front/searchBar.php'); ?>
 <!-- fOOD sEARCH Section Starts Here -->
-<section class="food-search text-center">
+<!-- <section class="food-search text-center">
     <div class="container">
 
         <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
@@ -12,7 +12,7 @@
         </form>
 
     </div>
-</section>
+</section> -->
 <!-- fOOD sEARCH Section Ends Here -->
 
 <?php
@@ -134,7 +134,7 @@ if (isset($_SESSION['order'])) {
                         </p>
                         <br>
 
-                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Add to order</a>
                     </div>
                 </div>
 
@@ -161,7 +161,3 @@ if (isset($_SESSION['order'])) {
         <a href="#">See All Foods</a>
     </p>
 </section>
-<!-- fOOD Menu Section Ends Here -->
-
-
-<?php include('partials-front/footer.php'); ?>

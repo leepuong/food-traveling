@@ -69,8 +69,8 @@ if (isset($_POST['submit'])) {
         $redirect = SITEURL . 'admin/manage-admin.php';
     } elseif ($role == 'staff') {
         $redirect = SITEURL . 'admin/manage-staff.php';
-    } elseif ($role == 'shiper') {
-        $redirect = SITEURL . 'admin/manage-shiper.php';
+    } elseif ($role == 'shipper') {
+        $redirect = SITEURL . 'admin/manage-shipper.php';
     } else {
         $redirect = SITEURL . 'admin/index.php'; // fallback nếu role không hợp lệ
     }

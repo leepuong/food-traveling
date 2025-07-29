@@ -26,20 +26,20 @@
             <div class="discount-card">
                 <span>30% Off<br>Fitness Meal</span>
             </div>
-            <img src="fitness-meal.jpg" alt="Fitness Meal" /> <!-- Replace with your image source -->
+            <img src="images/icon/RectangleuImg.png" alt="Fitness Meal" /> <!-- Replace with your image source -->
         </div>
-        <div class="form-section">
+        <div class="form-section login-form-box">
             <form action="" method="POST" class="login-form">
                 <h2>Sign in</h2>
                 <div class="social-login">
                     <button type="button" class="google-login">
-                        <img src="google.png" alt="Google"> Continue with Google
+                        <img src="<?php echo SITEURL; ?>images/icon/SocialGooglelogo.svg" alt="google" /> Continue with Google
                     </button>
                     <button type="button" class="apple-login">
-                        <img src="apple.png" alt="Apple"> Continue with Apple
+                        <img src="<?php echo SITEURL; ?>images/icon/SocialAppleLogo.svg" alt="apple" /> Continue with Apple
                     </button>
                     <button type="button" class="facebook-login">
-                        <img src="facebook.png" alt="Facebook"> Continue with Facebook
+                        <img src="<?php echo SITEURL; ?>images/icon/SocialFacebookLogo.svg" alt="facebook" /> Continue with Facebook
                     </button>
                 </div>
                 <div class="divider">OR</div>

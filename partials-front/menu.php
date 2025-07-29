@@ -19,7 +19,7 @@
     <div class="left-menu">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo SITEURL; ?>index.php">
                     <img src="<?php echo SITEURL; ?>images/icon/homeUnHover.svg" alt="Home" />
                 </a>
             </li>

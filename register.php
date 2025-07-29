@@ -24,13 +24,11 @@
             <div class="discount-card">
                 <span>30% Off<br>Fitness Meal</span>
             </div>
-            <img src="fitness-meal.jpg" alt="Fitness Meal" /> <!-- Replace with your image source -->
+            <img src="images/icon/RectangleuImg.png" alt="Fitness Meal" /> <!-- Replace with your image source -->
         </div>
-        <div class="form-section">
+        <div class="form-section register-form-box">
             <form action="" method="POST" class="register-form">
-                <div class="avatar">
-                    <img src="user-avatar.jpg" alt="Avatar" /> <!-- Replace with your avatar image -->
-                </div>
+
                 <h2>Create an account</h2>
                 <div class="input-group">
                     <label for="email">Email</label>
@@ -57,11 +55,14 @@
                 <button type="submit" name="submit" class="btn-main">Sign up</button>
                 <div class="divider">OR</div>
                 <div class="social-signup">
-                    <a href="#" class="google"><img src="google.png" alt="Google"></a>
-                    <a href="#" class="apple"><img src="apple.png" alt="Apple"></a>
-                    <a href="#" class="facebook"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#" class="google"><img src="<?php echo SITEURL; ?>images/icon/SocialGooglelogo.svg" alt="google" /></a>
+                    <a href="#" class="apple"><img src="<?php echo SITEURL; ?>images/icon/SocialAppleLogo.svg" alt="apple" /></a>
+                    <a href="#" class="facebook"><img src="<?php echo SITEURL; ?>images/icon/SocialFacebookLogo.svg" alt="facebook" /></a>
                 </div>
             </form>
+            <div class="signup-link">
+                I have an account! <a href="login.php">Sign in</a>
+            </div>
         </div>
     </div>
 </body>

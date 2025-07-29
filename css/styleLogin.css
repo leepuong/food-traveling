@@ -47,12 +47,20 @@ body {
     background: #f9f7f6;
     border-radius: 0 25px 25px 0;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
-    padding: 48px 40px;
+    /* padding: 35px 40px; */
     width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 720px;
+    /* height: 720px; */
+}
+
+.register-form-box {
+    padding: 22px 40px;
+}
+
+.login-form-box {
+    padding: 35px 40px;
 }
 
 .avatar img {
