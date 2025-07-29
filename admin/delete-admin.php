@@ -7,7 +7,7 @@
     $id = $_GET['id'];
 
     //2. Create SQL Query to Delete Admin
-    $sql = "DELETE FROM tbl_admin WHERE id=$id";
+    $sql = "DELETE FROM tbl_user_especial WHERE id=$id";
 
     //Execute the Query
     $res = mysqli_query($conn, $sql);

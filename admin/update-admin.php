@@ -11,7 +11,7 @@
             $id=$_GET['id'];
 
             //2. Create SQL Query to Get the Details
-            $sql="SELECT * FROM tbl_admin WHERE id=$id";
+            $sql="SELECT * FROM tbl_user_especial WHERE id=$id";
 
             //Execute the Query
             $res=mysqli_query($conn, $sql);
