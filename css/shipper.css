@@ -1,0 +1,125 @@
+.container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 901;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Đảm bảo nội dung sát lề phải */
+}
+
+.order-desc {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    min-width: 260px;
+    max-width: 350px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.order-desc h4 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.order-desc .contact {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #666;
+}
+
+.order-desc .qtyAndPrice {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+.order-desc .address {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    color: #222;
+    font-style: italic;
+    word-break: break-word;
+}
+
+
+/* Style cho nút Accept/Cancel trong .btnBox */
+
+.btnBox {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    background: #ff7f50;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #4285f4;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #357ae8;
+    color: #fff;
+}
+
+#statusBtn {
+    position: absolute;
+    z-index: 900;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    bottom: 50px;
+    right: 50%;
+    transform: translate(50%, 0);
+}
+
+#statusBtn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.online {
+    background-color: #4CAF50;
+}
+
+.offline {
+    background-color: #F44336;
+}
+
+.online:hover {
+    background-color: #3e8e41;
+}
+
+.offline:hover {
+    background-color: #d32f2f;
+}

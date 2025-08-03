@@ -23,7 +23,6 @@
     ?>
     <div class="container">
         <div class="side-image">
-
             <div class="discount-card">
                 <span>30% Off<br>Fitness Meal</span>
             </div>
@@ -31,7 +30,7 @@
         </div>
         <div class="form-section login-form-box">
             <form action="" method="POST" class="login-form">
-                <h2>Sign in</h2>
+                <h2>Shipper Sign in</h2>
                 <div class="social-login">
                     <button type="button" class="google-login">
                         <img src="<?php echo SITEURL; ?>images/icon/SocialGooglelogo.svg" alt="google" /> Continue with Google
@@ -58,7 +57,7 @@
                 </div>
                 <button type="submit" name="submit" class="btn-main">Sign in</button>
                 <div class="signup-link">
-                    Don't have an account? <a href="register.php">Sign up</a>
+                    Don't have an account? <a href="registerShipper.php">Sign up</a>
                 </div>
 
             </form>
@@ -67,8 +66,8 @@
     <div class="swichToShipperSide">
         <!-- Switch User/Shipper - thêm thuộc tính active cho trạng thái -->
         <div class="switch-user-shipper">
-            <a class="switch-btn user-btn active" href="login.php">User</a>
-            <a class="switch-btn shipper-btn" href="loginShipper.php">Shipper</a>
+            <a class="switch-btn user-btn " href="login.php">User</a>
+            <a class="switch-btn shipper-btn active" href="loginShipper.php">Shipper</a>
         </div>
     </div>
 </body>
@@ -92,7 +91,7 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($conn, $raw_password);
 
     //2. SQL to check whether the user with username and password exists or not
-    $sql = "SELECT * FROM tbl_users WHERE email='$username' AND password='$password' ";
+    $sql = "SELECT * FROM tbl_user_especial WHERE email='$username' AND password='$password' ";
 
     //3. Execute the Query
     $res = mysqli_query($conn, $sql);
@@ -106,12 +105,12 @@ if (isset($_POST['submit'])) {
         $_SESSION['user'] = $username; //TO check whether the user is logged in or not and logout will unset it
 
         //REdirect to HOme Page/Dashboard
-        header('location:' . SITEURL . 'index.php');
+        header('location:' . SITEURL . 'shipper/index.php');
     } else {
         //User not Available and Login FAil
         $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
         //REdirect to HOme Page/Dashboard
-        header('location:' . SITEURL . 'login.php');
+        header('location:' . SITEURL . 'loginShipper.php');
     }
 }
 

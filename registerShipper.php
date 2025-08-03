@@ -29,7 +29,7 @@
         <div class="form-section register-form-box">
             <form action="" method="POST" class="register-form">
 
-                <h2>Create an account</h2>
+                <h2>Create an shipper account</h2>
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" required>
@@ -61,15 +61,15 @@
                 </div>
             </form>
             <div class="signup-link">
-                I have an account! <a href="login.php">Sign in</a>
+                I have an account! <a href="loginShipper.php">Sign in</a>
             </div>
         </div>
     </div>
     <div class="swichToShipperSide">
         <!-- Switch User/Shipper - thêm thuộc tính active cho trạng thái -->
         <div class="switch-user-shipper">
-            <a class="switch-btn user-btn active" href="login.php">User</a>
-            <a class="switch-btn shipper-btn" href="loginShipper.php">Shipper</a>
+            <a class="switch-btn user-btn " href="login.php">User</a>
+            <a class="switch-btn shipper-btn active" href="loginShipper.php">Shipper</a>
         </div>
     </div>
 </body>
@@ -88,16 +88,20 @@ if (isset($_POST['submit'])) {
 
     //1. Get the Data from form
     $email = $_POST['email'];
-    $nameAccount = $_POST['email']; // Assuming the name is the same as email for simplicity
+    $username = explode('@', $email)[0]; // Assuming the name is the same as email for simplicity
     $password = md5($_POST['password']); //Password Encryption with MD5
 
     //2. SQL Query to Save the data into database
-    $sql = "INSERT INTO tbl_users SET 
+    $sql = "INSERT INTO tbl_user_especial SET 
     email='$email',
     password='$password',
-    name='$nameAccount',
-    username='$nameAccount'
+    phoneNumber='xxx-xxx-xxxx',
+    username='$username',
+    role = 'shipper'
 ";
+
+
+
 
     //3. Executing Query and Saving Data into Datbase
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -109,14 +113,14 @@ if (isset($_POST['submit'])) {
         //Create a Session Variable to Display Message
         $_SESSION['add'] = "<div class='success'>User Added Successfully.</div>";
         //Redirect Page to Manage Admin
-        header("location:" . SITEURL . 'login.php');
+        header("location:" . SITEURL . 'loginShipper.php');
     } else {
         //FAiled to Insert DAta
         //echo "Faile to Insert Data";
         //Create a Session Variable to Display Message
         $_SESSION['add'] = "<div class='error'>Failed to Add User.</div>";
         //Redirect Page to Add Admin
-        header("location:" . SITEURL . 'register.php');
+        header("location:" . SITEURL . 'registerShipper.php');
     }
 }
 

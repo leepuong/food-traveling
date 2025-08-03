@@ -58,3 +58,26 @@
     border-radius: 3px;
     margin: 32px 0 0 0;
 }
+
+.home-icon {
+    transition: opacity 0.3s;
+    opacity: 0.7;
+}
+
+.home-icon.active {
+    opacity: 1;
+    /* Có thể thêm hiệu ứng scale hoặc filter nếu muốn */
+    transform: scale(1.08);
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
+}
+
+.ellipsis {
+    white-space: nowrap;
+    /* Không xuống dòng */
+    overflow: hidden;
+    /* Ẩn phần vượt quá */
+    text-overflow: ellipsis;
+    /* Hiển thị dấu "..." */
+    width: 350px;
+    /* Cần có chiều rộng cụ thể */
+}

@@ -164,8 +164,26 @@ h2 {
     position: relative;
 }
 
+.divider1 {
+    text-align: center;
+    margin: 4px 0;
+    color: #aaa;
+    font-size: 1rem;
+}
+
 .divider::before,
 .divider::after {
+    content: "";
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+    background: #ddd;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.divider1::before,
+.divider1::after {
     content: "";
     display: inline-block;
     width: 70px;
@@ -255,6 +273,45 @@ h2 {
     color: #FF5722;
     text-decoration: underline;
     font-weight: 500;
+}
+
+.shipper-link {
+    width: 100%;
+    text-align: center;
+    /* margin-top: 14px; */
+    font-size: 1rem;
+}
+
+.shipper-link a {
+    color: #FF5722;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.switch-user-shipper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    gap: 8px;
+}
+
+.switch-btn {
+    padding: 8px 24px;
+    border: none;
+    background: #eee;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    width: 60px;
+    text-align: center;
+}
+
+.switch-btn.active {
+    background: #ff7f50;
+    color: #fff;
 }
 
 

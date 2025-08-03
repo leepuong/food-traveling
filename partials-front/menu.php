@@ -1,4 +1,5 @@
 <?php include('config/constants.php'); ?>
+<?php $current_page = basename($_SERVER['PHP_SELF']); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,18 +20,33 @@
     <div class="left-menu">
         <ul>
             <li>
-                <a href="<?php echo SITEURL; ?>index.php">
-                    <img src="<?php echo SITEURL; ?>images/icon/homeUnHover.svg" alt="Home" />
+                <a href="<?php echo SITEURL; ?>index.php" class="home-link">
+                    <?php if ($current_page == 'index.php'): ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/homeHover.svg" alt="Home" class="home-icon active" />
+                    <?php else: ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/homeUnHover.svg" alt="Home" class="home-icon" />
+                    <?php endif; ?>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <img src="<?php echo SITEURL; ?>images/icon/likeUnHover.svg" alt="like" />
+
+
+                <a href="<?php echo SITEURL; ?>likeIndex.php" class="like-link">
+                    <?php if ($current_page == 'likeIndex.php'): ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/likeHover.svg" alt="Like" class="home-icon active" />
+                    <?php else: ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/likeUnHover.svg" alt="Like" class="home-icon" />
+                    <?php endif; ?>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <img src="<?php echo SITEURL; ?>images/icon/hisUnHover.svg" alt="history" />
+
+                <a href="<?php echo SITEURL; ?>hisIndex.php" class="his-link">
+                    <?php if ($current_page == 'hisIndex.php'): ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/hisHover.svg" alt="His" class="home-icon active" />
+                    <?php else: ?>
+                        <img src="<?php echo SITEURL; ?>images/icon/hisUnHover.svg" alt="His" class="home-icon" />
+                    <?php endif; ?>
                 </a>
             </li>
             <li>
