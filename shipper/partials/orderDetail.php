@@ -12,18 +12,22 @@
 
         //Getting Foods from Database that are active and featured
         //SQL Query
-        $sql2 = "SELECT * FROM tbl_order WHERE status='Ordered'";
+        $IdOrder = $_GET['food_id'] ?? null;
+
+        $sql3 = "SELECT * FROM tbl_order WHERE id='$IdOrder'";
+
+
 
         //Execute the Query
-        $res2 = mysqli_query($conn, $sql2);
+        $res3 = mysqli_query($conn, $sql3);
 
         //Count Rows
-        $count2 = mysqli_num_rows($res2);
+        $count3 = mysqli_num_rows($res3);
 
         //CHeck whether food available or not
-        if ($count2 > 0) {
+        if ($count3 > 0) {
             //Food Available
-            while ($row = mysqli_fetch_assoc($res2)) {
+            while ($row = mysqli_fetch_assoc($res3)) {
                 //Get all the values
                 $id = $row['id'];
                 $food = $row['food'];
@@ -37,7 +41,7 @@
 
                 <div class="order-box">
                     <div class="order-desc">
-                        <h4><?php echo $customer_name; ?></h4>
+                        <h4><?php echo $customer_name; ?> deltail</h4>
                         <p class="contact"><?php echo $customer_contact; ?></p>
                         <p class="qtyAndPrice">qty<?php echo $qty; ?>, total <?php echo $total; ?></p>
                         <p class="address">
@@ -46,8 +50,8 @@
 
                         <br>
                         <div class="btnBox">
-                            <a id="AcceptBtn<?php echo $id; ?>" class="btn btn-primary">Accept</a>
-                            <a href="<?php echo SITEURL; ?>shipper/index.php?status=online#food_id=<?php echo $id; ?>" id="CanceltBtn" class="btn btn-primary">Cancel</a>
+                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Done</a>
+                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Cancel</a>
                         </div>
                     </div>
                 </div>
@@ -60,13 +64,6 @@
         }
 
         ?>
-
-        <script>
-            const btn = document.getElementById("AcceptBtn<?php echo $id; ?>");
-            btn.addEventListener("click", () => {
-                window.location.href = window.location.pathname + '?status=online&food_id=<?php echo $id; ?>';
-            });
-        </script>
     </div>
 </body>
 

@@ -1,4 +1,5 @@
 <?php include('../config/constants.php'); ?>
+
 <html>
 
 <head>
@@ -11,8 +12,11 @@
 
     <?php
     $status = $_GET['status'] ?? null;
+    $foodId = $_GET['food_id'] ?? null;
 
-    if ($status === 'online') {
+    if ($foodId && $status === 'online') {
+        include('orderDetail.php');
+    } elseif ($status === 'online') {
         include('order.php');
     }
 
@@ -32,6 +36,7 @@
         } else {
             btn.classList.add("offline");
             btn.textContent = "Offline";
+
         }
 
         btn.addEventListener("click", () => {
