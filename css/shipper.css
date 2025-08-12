@@ -1,125 +1,230 @@
 .container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 901;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /* Đảm bảo nội dung sát lề phải */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 901;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Đảm bảo nội dung sát lề phải */
+}
+
+/* Order list container */
+#order-list-container {
+  width: 100%;
+}
+
+/* Order detail container */
+#order-detail-container {
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+/* Back button container */
+.back-btn-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#back-to-orders {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+#back-to-orders:hover {
+  background: #5a6268;
+}
+
+/* Order detail content */
+#order-detail-content {
+  width: 100%;
+}
+
+/* Additional button styles for order detail */
+.btn-success {
+  background: #28a745;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background: #e0a800;
+  color: #212529;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+/* Error message styling */
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 .order-desc {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    min-width: 260px;
-    max-width: 350px;
-    font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  min-width: 260px;
+  max-width: 350px;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .order-desc h4 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-    color: #333;
-    font-weight: 700;
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
 }
 
 .order-desc .contact {
-    margin: 0 0 6px 0;
-    font-size: 15px;
-    color: #666;
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #666;
+}
+
+.order-desc .food {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
 }
 
 .order-desc .qtyAndPrice {
-    margin: 0 0 6px 0;
-    font-size: 15px;
-    color: #444;
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #444;
 }
 
 .order-desc .address {
-    margin: 0 0 6px 0;
-    font-size: 15px;
-    color: #222;
-    font-style: italic;
-    word-break: break-word;
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #222;
+  font-style: italic;
+  word-break: break-word;
 }
 
+.order-desc .order-date {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+.order-desc .status {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
+}
 
 /* Style cho nút Accept/Cancel trong .btnBox */
 
 .btnBox {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 6px;
-    background: #ff7f50;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    transition: background 0.2s, color 0.2s;
-    cursor: pointer;
-    font-size: 16px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: #ff7f50;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .btn:hover,
 .btn:focus {
-    background: #ff5722;
-    color: #fff;
-    text-decoration: none;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
 }
 
 .btn-primary {
-    background: #4285f4;
+  background: #4285f4;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: #357ae8;
-    color: #fff;
+  background: #357ae8;
+  color: #fff;
 }
 
 #statusBtn {
-    position: absolute;
-    z-index: 900;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-weight: 600;
-    bottom: 50px;
-    right: 50%;
-    transform: translate(50%, 0);
+  position: absolute;
+  z-index: 900;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  bottom: 50px;
+  right: 50%;
+  transform: translate(50%, 0);
 }
 
 #statusBtn:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .online {
-    background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .offline {
-    background-color: #F44336;
+  background-color: #f44336;
 }
 
 .online:hover {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 .offline:hover {
-    background-color: #d32f2f;
+  background-color: #d32f2f;
 }

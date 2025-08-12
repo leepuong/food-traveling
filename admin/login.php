@@ -4,14 +4,14 @@
 
 <head>
     <title>Login - Food Order System</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/loginAdmin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
     <div class="login">
         <h1 class="text-center">Login</h1>
-        <br><br>
 
         <?php
         if (isset($_SESSION['login'])) {
@@ -24,21 +24,18 @@
             unset($_SESSION['no-login-message']);
         }
         ?>
-        <br><br>
 
         <!-- Login Form Starts HEre -->
         <form action="" method="POST" class="text-center">
-            Username: <br>
-            <input type="text" name="username" placeholder="Enter Username"><br><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter Username" required>
 
-            Password: <br>
-            <input type="password" name="password" placeholder="Enter Password"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
 
             <input type="submit" name="submit" value="Login" class="btn-primary">
-            <br><br>
         </form>
         <!-- Login Form Ends HEre -->
-
 
     </div>
 

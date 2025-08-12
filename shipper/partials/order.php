@@ -1,13 +1,8 @@
-<html>
+<link rel="stylesheet" href="../../../css/shipper.css">
 
-<head>
-    <link rel="stylesheet" href="../css/shipper.css">
-</head>
-
-<body>
-
-    <div class="container">
-
+<div class="container">
+    <!-- Container for order list -->
+    <div id="order-list-container">
         <?php
 
         //Getting Foods from Database that are active and featured
@@ -35,7 +30,7 @@
                 $customer_address = $row['customer_address'];
         ?>
 
-                <div class="order-box">
+                <div class="order-box" data-order-id="<?php echo $id; ?>">
                     <div class="order-desc">
                         <h4><?php echo $customer_name; ?></h4>
                         <p class="contact"><?php echo $customer_contact; ?></p>
@@ -46,8 +41,8 @@
 
                         <br>
                         <div class="btnBox">
-                            <a id="AcceptBtn<?php echo $id; ?>" class="btn btn-primary">Accept</a>
-                            <a href="<?php echo SITEURL; ?>shipper/index.php?status=online#food_id=<?php echo $id; ?>" id="CanceltBtn" class="btn btn-primary">Cancel</a>
+                            <button class="accept-order-btn btn btn-primary" data-order-id="<?php echo $id; ?>">Accept</button>
+                            <a href="#" class="btn btn-primary">Cancel</a>
                         </div>
                     </div>
                 </div>
@@ -60,14 +55,13 @@
         }
 
         ?>
-
-        <script>
-            const btn = document.getElementById("AcceptBtn<?php echo $id; ?>");
-            btn.addEventListener("click", () => {
-                window.location.href = window.location.pathname + '?status=online&food_id=<?php echo $id; ?>';
-            });
-        </script>
     </div>
-</body>
 
-</html>
+    <!-- Container for order detail -->
+    <div id="order-detail-container" style="display: none;">
+        <div class="back-btn-container">
+            <button id="back-to-orders" class="btn btn-secondary">← Back to Orders</button>
+        </div>
+        <div id="order-detail-content"></div>
+    </div>
+</div>

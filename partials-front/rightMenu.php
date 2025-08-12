@@ -18,12 +18,12 @@
     <div class="right-menu">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo SITEURL; ?>setting.php">
                     <img src="<?php echo SITEURL; ?>images/icon/settingUnHover.svg" alt="setting" />
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo SITEURL; ?>index.php">
                     <img src="<?php echo SITEURL; ?>images/icon/logoBrandUnHover.svg" alt="brand" />
                 </a>
             </li>

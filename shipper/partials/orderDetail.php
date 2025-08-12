@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/shipper.css">
+    <link rel="stylesheet" href="../../../css/shipper.css">
 </head>
 
 <body>
@@ -10,9 +10,8 @@
 
         <?php
 
-        //Getting Foods from Database that are active and featured
-        //SQL Query
-        $IdOrder = $_GET['food_id'] ?? null;
+        //Get order from session
+        $IdOrder = $_SESSION['current_order'];
 
         $sql3 = "SELECT * FROM tbl_order WHERE id='$IdOrder'";
 
@@ -41,17 +40,18 @@
 
                 <div class="order-box">
                     <div class="order-desc">
-                        <h4><?php echo $customer_name; ?> deltail</h4>
+                        <h4><?php echo $customer_name; ?> details</h4>
                         <p class="contact"><?php echo $customer_contact; ?></p>
-                        <p class="qtyAndPrice">qty<?php echo $qty; ?>, total <?php echo $total; ?></p>
+                        <p class="food"> <?php echo $food?></p>
+                        <p class="qtyAndPrice">Qty: <?php echo $qty; ?>, Total: <?php echo $total; ?></p>
                         <p class="address">
                             <?php echo $customer_address; ?>
                         </p>
 
                         <br>
                         <div class="btnBox">
-                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Done</a>
-                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Cancel</a>
+                            <a href="#" class="btn btn-primary">Done</a>
+                            <a href="#" class="btn btn-primary">Cancel</a>
                         </div>
                     </div>
                 </div>

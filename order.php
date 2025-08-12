@@ -53,7 +53,7 @@ if (isset($_GET['food_id'])) {
                     } else {
                         //Image is Available
                     ?>
-                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
                     <?php
                     }
 
@@ -69,7 +69,7 @@ if (isset($_GET['food_id'])) {
                     <input type="hidden" name="price" value="<?php echo $price; ?>">
 
                     <div class="order-label">Quantity</div>
-                    <input type="number" name="qty" class="input-responsive" value="1" required>
+                    <input type="number" name="qty" class="input-responsive" value="1" min="1" max="99" required>
 
                 </div>
 
@@ -87,7 +87,7 @@ if (isset($_GET['food_id'])) {
                 <input type="email" name="email" placeholder="E.g. hi@vijaythapa.com" class="input-responsive" required>
 
                 <div class="order-label">Address</div>
-                <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
+                <textarea name="address" rows="5" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
 
                 <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
             </fieldset>

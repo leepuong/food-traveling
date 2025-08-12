@@ -11,7 +11,7 @@ include('login-check.php');
 <head>
     <title>Food Order Website - Home Page</title>
 
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminMenu.css">
 </head>
 
 <body>

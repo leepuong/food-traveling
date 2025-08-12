@@ -20,6 +20,14 @@ if (isset($_SESSION['order'])) {
     echo $_SESSION['order'];
     unset($_SESSION['order']);
 }
+
+
+// session_start(); // bắt buộc để tiếp tục session từ trang A
+
+// // Đọc dữ liệu đã lưu
+// $userCurent = $_SESSION['username']; // Kết quả: Phuong
+// // Kết quả: Translator
+// header('location:' . SITEURL . 'setting.php');
 ?>
 
 <!-- Categories Section Starts Here -->

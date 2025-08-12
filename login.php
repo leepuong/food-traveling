@@ -20,6 +20,8 @@
         echo $_SESSION['no-login-message'];
         unset($_SESSION['no-login-message']);
     }
+
+
     ?>
     <div class="container">
         <div class="side-image">
@@ -107,6 +109,7 @@ if (isset($_POST['submit'])) {
 
         //REdirect to HOme Page/Dashboard
         header('location:' . SITEURL . 'index.php');
+        // header('location:' . SITEURL . 'setting.php');
     } else {
         //User not Available and Login FAil
         $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";

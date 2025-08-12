@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Order System</title>
+    <style>
+        .order-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        #order-detail-container {
+            display: none;
+            border: 2px solid #007bff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test Order System</h1>
+
+    <div id="order-list-container">
+        <div class="order-box" data-order-id="1">
+            <h4>Test Customer</h4>
+            <p>Contact: 0123456789</p>
+            <p>qty1, total 5.00</p>
+            <p>Address: Test Address</p>
+            <div class="btnBox">
+                <button class="accept-order-btn btn btn-primary" data-order-id="1">Accept</button>
+                <button class="btn btn-primary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="order-detail-container">
+        <div class="back-btn-container">
+            <button id="back-to-orders" class="btn btn-secondary">← Back to Orders</button>
+        </div>
+        <div id="order-detail-content"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Test API connection first
+            console.log('Testing API connection...');
+            fetch('partials/api/test_api.php')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('API test result:', data);
+                })
+                .catch(error => {
+                    console.error('API test failed:', error);
+                });
+
+            // Handle order acceptance
+            document.querySelectorAll('.accept-order-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const orderId = this.dataset.orderId;
+                    console.log('Accepting order:', orderId);
+
+                    // Hide all order boxes
+                    document.querySelectorAll('.order-box').forEach(box => {
+                        box.style.display = 'none';
+                    });
+
+                    // Show order detail container
+                    const orderDetailContainer = document.getElementById('order-detail-container');
+                    const orderListContainer = document.getElementById('order-list-container');
+
+                    orderListContainer.style.display = 'none';
+                    orderDetailContainer.style.display = 'block';
+
+                    // Load order details
+                    loadOrderDetail(orderId);
+                });
+            });
+
+            // Handle back button
+            document.getElementById('back-to-orders').addEventListener('click', function () {
+                const orderDetailContainer = document.getElementById('order-detail-container');
+                const orderListContainer = document.getElementById('order-list-container');
+
+                orderDetailContainer.style.display = 'none';
+                orderListContainer.style.display = 'block';
+
+                document.querySelectorAll('.order-box').forEach(box => {
+                    box.style.display = 'block';
+                });
+            });
+
+            function loadOrderDetail(orderId) {
+                console.log('Loading order detail for ID:', orderId);
+
+                // For testing, just show mock data
+                const orderDetailContent = document.getElementById('order-detail-content');
+                orderDetailContent.innerHTML = `
+                    <div class="order-box">
+                        <h4>Test Customer - Order Details</h4>
+                        <p>Contact: 0123456789</p>
+                        <p>Food: Test Food</p>
+                        <p>Qty: 1, Total: $5.00</p>
+                        <p>Address: Test Address</p>
+                        <p>Status: Accepted</p>
+                        <div class="btnBox">
+                            <button class="btn btn-primary">Mark as Delivered</button>
+                            <button class="btn btn-primary">Update Status</button>
+                            <button class="btn btn-primary">Cancel Order</button>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>
