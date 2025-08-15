@@ -54,7 +54,7 @@
                     <span class="toggle-password">Hide</span>
                 </div>
                 <div class="forgot-password">
-                    <a href="#">Forget your password</a>
+                    <a href="forgotPassword.php">Forget your password</a>
                 </div>
                 <button type="submit" name="submit" class="btn-main">Sign in</button>
                 <div class="signup-link">
