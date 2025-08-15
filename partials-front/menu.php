@@ -49,16 +49,21 @@
                     <?php endif; ?>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <img src="<?php echo SITEURL; ?>images/icon/orderUnHover.svg" alt="order" />
-                </a>
+           <li>
+             <a href="<?php echo SITEURL; ?>my-orders.php" class="orders-link">
+                <?php if ($current_page == 'my-orders.php'): ?>
+                    <img src="<?php echo SITEURL; ?>images/icon/orderHover.svg" alt="Orders" class="home-icon active" />
+                <?php else: ?>
+                    <img src="<?php echo SITEURL; ?>images/icon/orderUnHover.svg" alt="Orders" class="home-icon" />
+                <?php endif; ?>
+             </a>
             </li>
-            <li>
+
+            <!-- <li>
                 <a href="#">
                     <img src="<?php echo SITEURL; ?>images/icon/shippingUnHover.svg" alt="shipping" />
                 </a>
-            </li>
+            </li> -->
         </ul>
         <!-- <div class="left-menu-divider"></div> -->
     </div>

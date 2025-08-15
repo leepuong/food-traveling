@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!defined('SITEURL')) define('SITEURL', 'http://localhost/FINAL-PROJECT/food-order-website-php/');
+if (!defined('SITEURL')) define('SITEURL', 'http://localhost/food-traveling/');
 if (!defined('LOCALHOST')) define('LOCALHOST', 'localhost');
 if (!defined('DB_USERNAME')) define('DB_USERNAME', 'root');
 if (!defined('DB_PASSWORD')) define('DB_PASSWORD', '');

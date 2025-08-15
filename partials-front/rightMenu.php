@@ -18,7 +18,7 @@
     <div class="right-menu">
         <ul>
             <li>
-                <a href="#">
+                <a href="<?php echo SITEURL; ?>setting.php">
                     <img src="<?php echo SITEURL; ?>images/icon/settingUnHover.svg" alt="setting" />
                 </a>
             </li>
